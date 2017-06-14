@@ -375,7 +375,7 @@ $wgActionPaths = [];
 /**
  * Uploads have to be specially set up to be secure
  */
-$wgEnableUploads = false;
+$wgEnableUploads = true;
 
 /**
  * The maximum age of temporary (incomplete) uploaded files
@@ -5059,7 +5059,7 @@ $wgGroupPermissions = [];
 /** @cond file_level_code */
 // Implicit group for all visitors
 $wgGroupPermissions['*']['createaccount'] = true;
-$wgGroupPermissions['*']['read'] = true;
+$wgGroupPermissions['*']['read'] = false;
 $wgGroupPermissions['*']['edit'] = true;
 $wgGroupPermissions['*']['createpage'] = true;
 $wgGroupPermissions['*']['createtalk'] = true;
@@ -5151,13 +5151,58 @@ $wgGroupPermissions['sysop']['unblockself'] = true;
 $wgGroupPermissions['sysop']['suppressredirect'] = true;
 # $wgGroupPermissions['sysop']['pagelang'] = true;
 # $wgGroupPermissions['sysop']['upload_by_url'] = true;
+
 $wgGroupPermissions['sysop']['mergehistory'] = true;
 $wgGroupPermissions['sysop']['managechangetags'] = true;
 $wgGroupPermissions['sysop']['deletechangetags'] = true;
 
-// Permission to change users' group assignments
 $wgGroupPermissions['bureaucrat']['userrights'] = true;
 $wgGroupPermissions['bureaucrat']['noratelimit'] = true;
+
+$wgGroupPermissions['presentation']['read'] = true;
+$wgGroupPermissions['catering']['read'] = true;
+$wgGroupPermissions['room']['read'] = true;
+$wgGroupPermissions['invite']['read'] = true;
+$wgGroupPermissions['flyer']['read'] = true;
+$wgGroupPermissions['guests']['read'] = true;
+
+$wgGroupPermissions['leader_presentation']['edit'] = true;
+$wgGroupPermissions['leader_presentation']['read'] = true;
+$wgGroupPermissions['leader_presentation']['createpage'] = true;
+$wgGroupPermissions['leader_presentation']['createtalk'] = true;
+$wgGroupPermissions['leader_presentation']['upload'] = true;
+
+$wgGroupPermissions['leader_catering']['edit'] = true;
+$wgGroupPermissions['leader_catering']['read'] = true;
+$wgGroupPermissions['leader_catering']['createpage'] = true;
+$wgGroupPermissions['leader_catering']['createtalk'] = true;
+$wgGroupPermissions['leader_catering']['upload'] = true;
+
+$wgGroupPermissions['leader_room']['edit'] = true;
+$wgGroupPermissions['leader_room']['read'] = true;
+$wgGroupPermissions['leader_room']['createpage'] = true;
+$wgGroupPermissions['leader_room']['createtalk'] = true;
+$wgGroupPermissions['leader_room']['upload'] = true;
+
+$wgGroupPermissions['leader_invite']['edit'] = true;
+$wgGroupPermissions['leader_invite']['read'] = true;
+$wgGroupPermissions['leader_invite']['createpage'] = true;
+$wgGroupPermissions['leader_invite']['createtalk'] = true;
+$wgGroupPermissions['leader_invite']['upload'] = true;
+
+$wgGroupPermissions['leader_flyer']['edit'] = true;
+$wgGroupPermissions['leader_flyer']['read'] = true;
+$wgGroupPermissions['leader_flyer']['createpage'] = true;
+$wgGroupPermissions['leader_flyer']['createtalk'] = true;
+$wgGroupPermissions['leader_flyer']['upload'] = true;
+
+$wgGroupPermissions['leader_guests']['edit'] = true;
+$wgGroupPermissions['leader_guests']['read'] = true;
+$wgGroupPermissions['leader_guests']['createpage'] = true;
+$wgGroupPermissions['leader_guests']['createtalk'] = true;
+$wgGroupPermissions['leader_guests']['upload'] = true;
+
+// Permission to change users' group assignments
 // Permission to change users' groups assignments across wikis
 # $wgGroupPermissions['bureaucrat']['userrights-interwiki'] = true;
 // Permission to export pages including linked pages regardless of $wgExportMaxLinkDepth

@@ -39,7 +39,7 @@ $wgExtensionCredits['parserhook'][] = [
 // sysop users can read all restricted pages
 $wgAdminCanReadAll = true;
 // do not redirect from page in search results to restricted pages
-$wgAccessControlRedirect = false;
+$wgAccessControlRedirect = true;
 
 // Load extension's class
 $wgAutoloadClasses['AccessControlHooks'] = __DIR__ . '/AccessControl.hooks.php';

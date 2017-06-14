@@ -18,14 +18,14 @@ if ( !defined( 'MEDIAWIKI' ) ) {
 ## Uncomment this to disable output compression
 # $wgDisableOutputCompression = true;
 
-$wgSitename = "Wissensmanagement";
+$wgSitename = "Expertsexchange";
 
 ## The URL base path to the directory containing the wiki;
 ## defaults for all runtime URL paths are based off of this.
 ## For more information on customizing the URLs
 ## (like /w/index.php/Page_title to /wiki/Page_title) please see:
 ## https://www.mediawiki.org/wiki/Manual:Short_URL
-$wgScriptPath = "/mediawiki";
+$wgScriptPath = "/mediawiki-1.28.2";
 
 ## The protocol and server name to use in fully-qualified URLs
 $wgServer = "http://localhost";
@@ -39,7 +39,7 @@ $wgLogo = "$wgResourceBasePath/resources/assets/wiki.png";
 
 ## UPO means: this is also a user preference option
 
-$wgEnableEmail = false;
+$wgEnableEmail = true;
 $wgEnableUserEmail = true; # UPO
 
 $wgEmergencyContact = "apache@localhost";
@@ -52,15 +52,15 @@ $wgEmailAuthentication = true;
 ## Database settings
 $wgDBtype = "mysql";
 $wgDBserver = "localhost";
-$wgDBname = "mediawiki";
+$wgDBname = "my_wiki";
 $wgDBuser = "root";
 $wgDBpassword = "";
 
 # MySQL specific settings
-$wgDBprefix = "mw";
+$wgDBprefix = "";
 
 # MySQL table options to use during installation or update
-$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=utf8";
+$wgDBTableOptions = "ENGINE=InnoDB, DEFAULT CHARSET=binary";
 
 # Experimental charset support for MySQL 5.0.
 $wgDBmysql5 = false;
@@ -94,16 +94,16 @@ $wgShellLocale = "en_US.utf8";
 #$wgCacheDirectory = "$IP/cache";
 
 # Site language code, should be one of the list in ./languages/data/Names.php
-$wgLanguageCode = "de";
+$wgLanguageCode = "en";
 
-$wgSecretKey = "0a4f07b2fba74aa91667c292b66015f6c8b26df0cf2d5237023ac5a4372525b7";
+$wgSecretKey = "656b21faa57e4f60682b0e48ff59d9fe907ffe6fc6ca0db721eecc1d5e89cc4e";
 
 # Changing this will log out all existing sessions.
 $wgAuthenticationTokenVersion = "1";
 
 # Site upgrade key. Must be set to a string (default provided) to turn on the
 # web installer while LocalSettings.php is in place
-$wgUpgradeKey = "a11668d86a5374ad";
+$wgUpgradeKey = "db3c26e3aee4e273";
 
 ## For attaching licensing metadata to pages, and displaying an
 ## appropriate copyright notice / icon. GNU Free Documentation
@@ -118,7 +118,7 @@ $wgDiff3 = "";
 
 ## Default skin: you can change the default skin. Use the internal symbolic
 ## names, ie 'vector', 'monobook':
-$wgDefaultSkin = "modern";
+$wgDefaultSkin = "vector";
 
 # Enabled skins.
 # The following skins were automatically enabled:
@@ -127,13 +127,9 @@ wfLoadSkin( 'Modern' );
 wfLoadSkin( 'MonoBook' );
 wfLoadSkin( 'Vector' );
 
-
-# Enabled extensions. Most of the extensions are enabled by adding
-# wfLoadExtensions('ExtensionName');
-# to LocalSettings.php. Check specific extension documentation for more details.
-# The following extensions were automatically enabled:
 require_once "$IP/extensions/AccessControl/AccessControl.php";
 
+$wgGroupPermissions['*']['read'] = true;
 
 # End of automatically generated settings.
 # Add more configuration options below.
